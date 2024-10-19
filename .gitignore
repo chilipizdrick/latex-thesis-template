@@ -1,0 +1,13 @@
+*.aux
+*.toc
+*.bbl
+*.blg
+*.bcf
+*.log
+*.tex.xml
+*.run.xml
+*.out
+*.pdf
+
+_minted-main/
+.direnv/
