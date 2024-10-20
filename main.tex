@@ -2,9 +2,6 @@
 
 % --- Packages ---
 
-% Experimental
-% \usepackage[none]{hyphenat}
-
 \usepackage{polyglossia} % Localization
 \usepackage{fontspec}
 \usepackage[T1]{fontenc}
@@ -48,11 +45,11 @@
 \setdefaultlanguage[spelling=modern]{russian}
 \setotherlanguage{english}
 % Font settings
-\setmainfont{Times New Roman} 
+\setmainfont{Times New Roman}
 \setmonofont{Times New Roman}
-\setromanfont{Times New Roman} 
+\setromanfont{Times New Roman}
 \newfontfamily\cyrillicfont[
-    Ligatures=TeX,    
+    Ligatures=TeX,
 ]{Times New Roman}
 \newfontfamily\cyrillicfonttt{JetBrainsMono-Regular.otf}[
   Script=Cyrillic,
@@ -76,10 +73,10 @@
 \setlength{\parindent}{1.25cm} % Paragraph gap = 1.25 cm
 \graphicspath{ {./images/} } % Path to the images directory
 \hypersetup{
-    colorlinks=true, 
+    colorlinks=true,
     linkcolor=black,
-    filecolor=blue, 
-    citecolor = black,       
+    filecolor=blue,
+    citecolor = black,
     urlcolor=blue,
 } % Links and citations coloring
 
@@ -114,28 +111,21 @@
     justification=raggedright,
     singlelinecheck=false
 }
-% \newenvironment{table}{
-%     \captionsetup[table]{hypcap=false}
-%     \vbox\bgroup
-% }{
-%     \smallskip
-%     \egroup
-% }
 
 % --- Macros ---
 
 % Make square brackets for cases
 \makeatletter
-\newenvironment{sqcases}{%
+\newenvironment{sqcases}{
   \matrix@check\sqcases\env@sqcases
-}{%
-  \endarray\right.%
+}{
+  \endarray\right.
 }
-\def\env@sqcases{%
+\def\env@sqcases{
   \let\@ifnextchar\new@ifnextchar
   \left\lbrack
-  \def\arraystretch{1.2}%
-  \array{@{}l@{\quad}l@{}}%
+  \def\arraystretch{1.2}
+  \array{@{}l@{\quad}l@{}}
 }
 \makeatother
 
@@ -147,25 +137,11 @@
 \end{figure}
 }
 
-% \renewenvironment{appendix}{
-%     \captionsetup[appendix]{hypcap=false}
-%     \vbox\bgroup
-% }{
-%     \smallskip
-%     \egroup
-% }
-
 \newcommand{\codefromfile}[2]{
 \begin{codeappendix}
     \inputminted[breaklines=true, framesep=2mm, fontsize=\footnotesize, firstline=1, linenos]{#2}{listings/#1}
 \end{codeappendix}
 }
-% \newcommand{\codefromfile}[3]{
-% \begin{codeappendix}
-%     \inputminted[breaklines=true, framesep=2mm, fontsize=\footnotesize, firstline=1,]{#2}{listings/#1}
-%     \captionof{listing}{#3}
-% \end{codeappendix}
-% }
 
 % --- Other ---
 
@@ -191,11 +167,11 @@
 
 % --- Table of contents ---
 
-\newpage 
+\newpage
 \begin{center}
     \tableofcontents
 \end{center}
-\newpage 
+\newpage
 
 % --- Contents ---
 

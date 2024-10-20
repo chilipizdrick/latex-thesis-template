@@ -14,18 +14,11 @@
   in {
     devShells.${system}.default = pkgs.mkShell rec {
       nativeBuildInputs = [
-        (alias "compile" "biber main && xelatex -shell-escape main.tex")
-        (alias "first-compile" ''
-          xelatex -shell-escape main.tex \
-            && biber main \
-            && xelatex -shell-escape main.tex \
-            && xelatex -shell-escape main.tex
-        '')
+        (alias "compile" "latexmk -pvc -pdf -e '$pdflatex=q/xelatex -shell-escape %O %S/' main.tex")
       ];
 
       buildInputs = with pkgs; [
         texliveFull
-        texlivePackages.latexindent
         python3
         python312Packages.pygments
       ];
